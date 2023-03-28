@@ -27,5 +27,6 @@ Route.group(() => {
 
 Route.group(() => {
   Route.resource('/users', 'UsersController').only(['store'])
-  Route.resource('/transactions', 'TransactionsController').only(['store'])
+  Route.resource('/transactions', 'TransactionsController').only(['index', 'store'])
+  Route.resource('/total-transactions', 'TotalTransactionsController').only(['index'])
 }).middleware('auth:api')

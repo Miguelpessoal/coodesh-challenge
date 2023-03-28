@@ -1,10 +1,21 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
+import Transaction from 'App/Models/Transaction'
+
 import StoreTransactionService from 'App/Services/StoreTransactionService'
 
 import StoreTransactionValidator from 'App/Validators/Transaction/StoreTransactionValidator'
 
 export default class TransactionsController {
+  public async index({ request }: HttpContextContract) {
+    const page = request.input('page', 1)
+    const limit = 10
+
+    const transactions = await Transaction.query().paginate(page, limit)
+
+    return transactions
+  }
+
   public async store({ response, request }: HttpContextContract) {
     try {
       const { file } = await request.validate(StoreTransactionValidator)

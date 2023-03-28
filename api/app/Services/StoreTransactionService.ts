@@ -17,7 +17,7 @@ export default class {
         type: Number(line.substring(0, 1)),
         date: line.substring(1, 26),
         product: line.substring(26, 56),
-        value: line.substring(56, 66),
+        value: Number(line.substring(56, 66)),
         seller: line.substring(66, 86),
       })
 

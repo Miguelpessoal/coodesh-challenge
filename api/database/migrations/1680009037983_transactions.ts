@@ -9,7 +9,7 @@ export default class extends BaseSchema {
       table.integer('type', 1).notNullable()
       table.string('date', 25).notNullable()
       table.string('product', 30).notNullable()
-      table.string('value', 10).notNullable()
+      table.integer('value', 10).notNullable()
       table.string('seller', 20).notNullable()
 
       table.timestamp('created_at', { useTz: true }).defaultTo(this.now())

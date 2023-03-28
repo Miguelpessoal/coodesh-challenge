@@ -23,7 +23,7 @@ export default class TransactionsController {
 
       return response.status(201).json({ message: 'Transações cadastradas!' })
     } catch {
-      return response.status(422).json('E-mail ou senha inválidos.')
+      return response.status(422).json({ message: 'Erro ao cadastrar.' })
     }
   }
 }

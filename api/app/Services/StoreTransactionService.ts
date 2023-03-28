@@ -1,12 +1,13 @@
 import Transaction from 'App/Models/Transaction'
+import { MultipartFileContract } from '@ioc:Adonis/Core/BodyParser'
 
 export default class {
-  public static async run() {
+  public static async run(file: MultipartFileContract) {
     const fs = require('fs')
     const readLine = require('readline')
 
     const data = readLine.createInterface({
-      input: fs.createReadStream('sales.txt'),
+      input: fs.createReadStream(file.tmpPath),
     })
 
     const payload: Object[] = []

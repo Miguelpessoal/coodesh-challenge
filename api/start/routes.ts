@@ -20,6 +20,11 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async () => {
-  return { hello: 'world' }
+Route.group(() => {
+  Route.post('login', 'AuthController.login').as('login')
+  Route.post('logout', 'AuthController.logout').as('logout')
 })
+
+Route.group(() => {
+  Route.resource('/users', 'UsersController').only(['store', 'update'])
+}).middleware('auth:api')

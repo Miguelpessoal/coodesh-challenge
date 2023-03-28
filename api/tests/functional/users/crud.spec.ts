@@ -19,4 +19,27 @@ test.group('Users crud spec', (group) => {
     response.assertStatus(201)
     assert.exists(createdUser)
   })
+
+  test('it should not be able to create a new user with an existing email', async ({
+    client,
+    assert,
+  }) => {
+    const data = {
+      name: 'John Doe',
+      email: 'teste@gmail.com',
+      password: 'secret',
+    }
+    const response = await client.post(route('users.store')).json(data).authenticated()
+
+    const newData = {
+      name: 'John New',
+      email: 'teste@gmail.com',
+      password: 'secret',
+    }
+    const newResponse = await client.post(route('users.store')).json(newData).authenticated()
+    const createdUser = await User.query().where('email', newData.email).first()
+
+    newResponse.assertStatus(422)
+    assert.exists(createdUser)
+  })
 })

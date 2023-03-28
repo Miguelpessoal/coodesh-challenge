@@ -29,7 +29,7 @@ test.group('Users crud spec', (group) => {
       email: 'teste@gmail.com',
       password: 'secret',
     }
-    const response = await client.post(route('users.store')).json(data).authenticated()
+    await client.post(route('users.store')).json(data).authenticated()
 
     const newData = {
       name: 'John New',

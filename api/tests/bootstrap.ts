@@ -22,11 +22,7 @@ export const plugins: Required<Config>['plugins'] = [
 export const reporters: Required<Config>['reporters'] = [specReporter()]
 
 export const runnerHooks: Pick<Required<Config>, 'setup' | 'teardown'> = {
-  setup: [
-    () => TestUtils.ace().loadCommands(),
-    () => TestUtils.db().migrate(),
-    () => TestUtils.db().seed(),
-  ],
+  setup: [() => TestUtils.ace().loadCommands(), () => TestUtils.db().migrate()],
   teardown: [() => TestUtils.db().truncate()],
 }
 

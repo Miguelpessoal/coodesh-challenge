@@ -16,16 +16,4 @@ export default class UsersController {
 
     return response.created(user)
   }
-
-  public async update({ params, request, response }: HttpContextContract) {
-    const user = await User.findOrFail(params.id)
-
-    const payload = request.only(['name', 'email', 'password'])
-
-    user.merge(payload)
-
-    await user.save()
-
-    return response.ok(user)
-  }
 }

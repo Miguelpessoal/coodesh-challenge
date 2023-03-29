@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 interface BtnProps {
-  background: string;
+  type: string;
 }
 
 export const Button = styled.button<BtnProps>`
-  background: ${(props) => props.theme.colors.orange[200]};
+  background-color: ${({ theme, type }) =>
+    type ? theme.colors.orange[200] : theme.colors.orange[100]};
 
   width: 21rem;
   height: 2rem;

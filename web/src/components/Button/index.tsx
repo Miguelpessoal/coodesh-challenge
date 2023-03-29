@@ -1,10 +1,10 @@
 import { Button } from "./styles";
 
 type ButtonProps = {
-  color?: string;
-  name?: string;
+  name: string;
+  type?: "primary" | "secondary";
 };
 
-export function ButtonComponent({ color, name }: ButtonProps) {
-  return <Button background="">{name}</Button>;
+export function ButtonComponent({ type, name }: ButtonProps) {
+  return <Button type={type}>{name}</Button>;
 }

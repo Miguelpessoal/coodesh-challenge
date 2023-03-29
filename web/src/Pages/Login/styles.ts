@@ -14,13 +14,14 @@ export const Container = styled.div`
 export const Header = styled.div`
   display: flex;
   justify-content: center;
-
-  font-family: "Roboto", sans-serif;
-  color: ${(props) => props.theme.colors.orange[100]};
-  font-size: ${(props) => props.theme.fontSizes.lg}px;
 `;
 
-export const Title = styled.h1``;
+export const Title = styled.h1`
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: ${(props) => props.theme.fontSizes.xxl}px;
+  color: ${(props) => props.theme.colors.orange[100]};
+`;
 
 export const Form = styled.div`
   display: flex;

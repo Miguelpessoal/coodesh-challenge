@@ -1,4 +1,11 @@
-export const defaultTheme = {
+import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
+
+const config: ThemeConfig = {
+  initialColorMode: "dark",
+  useSystemColorMode: false,
+};
+
+export const defaultTheme = extendTheme({
   colors: {
     white: {
       100: "#FFFFFF",
@@ -14,17 +21,5 @@ export const defaultTheme = {
     },
     brown: "#3E3D3C",
   },
-  fontWeights: {
-    heading: "Inter_700Bold",
-    medium: "Inter_500Medium",
-    body: "Inter_400Regular",
-  },
-  fontSizes: {
-    xxs: 8,
-    xs: 10,
-    sm: 12,
-    md: 16,
-    lg: 20,
-    xl: 22,
-  },
-};
+  config,
+});

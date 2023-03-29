@@ -18,9 +18,7 @@ This project aims to automate the registration and facilitate the sum of transac
 
 ## How to start fronted:
 
--After config your api, you need start your frontend;
--Run again the "yarn" command to install dependencies (Node Version 18+);
--After, configure your ".env" like ".env.example";
--Finally, run the command: "yarn dev" to start your web.
-
-
+- After config your api, you need start your frontend;
+- Run again the "yarn" command to install dependencies (Node Version 18+);
+- After, configure your ".env" like ".env.example";
+- Finally, run the command: "yarn dev" to start your web.

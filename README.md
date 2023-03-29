@@ -23,4 +23,4 @@ This project aims to automate the registration and facilitate the sum of transac
 - After, configure your ".env" like ".env.example";
 - Finally, run the command: "yarn dev" to start your web.
 
-#This is a challenge by Coodesh
+This is a challenge by Coodesh

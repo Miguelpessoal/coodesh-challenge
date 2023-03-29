@@ -22,3 +22,5 @@ This project aims to automate the registration and facilitate the sum of transac
 - Run again the "yarn" command to install dependencies (Node Version 18+);
 - After, configure your ".env" like ".env.example";
 - Finally, run the command: "yarn dev" to start your web.
+
+#This is a challenge by Coodesh

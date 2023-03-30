@@ -7,8 +7,7 @@ export function Home() {
     <Content>
       <Title>Dados de transação</Title>
       <Button>Importar dados</Button>
-      <List />
-      {/* <EmptyList /> */}
+      {/* {transactions.length ? <List /> : <EmptyList />} */}
     </Content>
   );
 }

@@ -1,6 +1,6 @@
 import { ButtonComponent } from "../../components/Button";
 import { InputComponent } from "../../components/Input";
-import { Container, Form, Header, Title } from "./styles";
+import { Button, Container, Form, Header, Title } from "./styles";
 
 export function Login() {
   return (
@@ -12,7 +12,7 @@ export function Login() {
         <InputComponent type="text" label={"E-mail"} />
         <InputComponent type="password" label={"Senha"} />
       </Form>
-      <ButtonComponent name="Entrar" />
+      <Button>Entrar</Button>
     </Container>
   );
 }

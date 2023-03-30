@@ -6,8 +6,6 @@ import {
   Th,
   Td,
   TableContainer,
-  TableCaption,
-  Tfoot,
   ChakraProvider,
 } from "@chakra-ui/react";
 import chakraTheme from "../../theme/chakraTheme";
@@ -20,7 +18,7 @@ export function List() {
           <Table variant="simple" colorScheme="orange">
             <Thead>
               <Tr>
-                <Th color={"#FBD38D"}>Nome</Th>
+                <Th color={"#FBD38D"}>Tipo</Th>
                 <Th color={"#FBD38D"}>Data</Th>
                 <Th color={"#FBD38D"}>Produto</Th>
                 <Th color={"#FBD38D"}>Valor (R$)</Th>
@@ -28,13 +26,15 @@ export function List() {
               </Tr>
             </Thead>
             <Tbody>
-              <Tr>
-                <Td>inches</Td>
-                <Td>millimetres (mm)</Td>
-                <Td>25.4</Td>
-                <Td>25.4</Td>
-                <Td>25.4</Td>
-              </Tr>
+              {/* transactions.map((transaction) => (
+                <Tr key={transaction.id}>
+                  <Td>{transaction.type}</Td>
+                  <Td>{transaction.date}</Td>
+                  <Td>{transaction.product}</Td>
+                  <Td>{transaction.value}</Td>
+                  <Td>{transaction.seller}</Td>
+                </Tr>
+              )) */}
             </Tbody>
           </Table>
         </TableContainer>

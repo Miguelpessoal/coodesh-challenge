@@ -42,4 +42,8 @@ export const Input = styled.input`
     border: 2px solid ${(props) => props.theme.colors.orange[100]};
     transition: 0.6s;
   }
+
+  :focus {
+    border: 2px solid ${(props) => props.theme.colors.orange[100]};
+  }
 `;

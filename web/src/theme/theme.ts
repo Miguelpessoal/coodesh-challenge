@@ -1,11 +1,4 @@
-import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
-
-const config: ThemeConfig = {
-  initialColorMode: "dark",
-  useSystemColorMode: false,
-};
-
-export const defaultTheme = extendTheme({
+export const defaultTheme = {
   colors: {
     white: {
       100: "#FFFFFF",
@@ -18,8 +11,8 @@ export const defaultTheme = extendTheme({
     orange: {
       100: "#E98834",
       200: "#FBD38D",
+      300: "#F2760B",
     },
     brown: "#3E3D3C",
   },
-  config,
-});
+};

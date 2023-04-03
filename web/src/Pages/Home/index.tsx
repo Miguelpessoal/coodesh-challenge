@@ -4,15 +4,6 @@ import { List } from "../../components/List";
 import { Content, Title, FileInput, Button, FileInputLabel } from "./styles";
 import { api } from "../../utils/Api";
 import { useToast } from "@chakra-ui/react";
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
-} from "@chakra-ui/react";
 
 export function Home() {
   const [transactions, setTransactions] = useState([]);

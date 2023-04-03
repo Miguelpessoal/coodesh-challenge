@@ -8,7 +8,6 @@ import {
   TableContainer,
   ChakraProvider,
 } from "@chakra-ui/react";
-import { useEffect } from "react";
 import chakraTheme from "../../theme/chakraTheme";
 import moment from "moment";
 
@@ -44,7 +43,7 @@ export function List({ transactions }: any) {
             <Tbody>
               {transactions.map((transaction: any) => (
                 <Tr key={transaction.id}>
-                  <Td>{types[transaction.type]}</Td>
+                  <Td>{types[transaction.type - 1]}</Td>
                   <Td>
                     {moment(transaction.date).format("DD/MM/YYYY HH:mm:ss")}
                   </Td>

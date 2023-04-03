@@ -5,6 +5,8 @@ export const Content = styled.div`
   justify-content: center;
   width: 80rem;
 
+  margin-top: 2rem;
+
   border-top: 2px solid ${(props) => props.theme.colors.white[200]};
   border-radius: 6px;
 `;

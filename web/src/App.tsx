@@ -10,12 +10,15 @@ import {
 import { GlobalStyle } from "./theme/global";
 import { defaultTheme } from "./theme/theme";
 import { Router } from "./routes/Router";
+import { AuthProvider } from "./context/AuthContext";
 
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
-        <Router />
+        <AuthProvider>
+          <Router />
+        </AuthProvider>
       </BrowserRouter>
       <GlobalStyle />
     </ThemeProvider>

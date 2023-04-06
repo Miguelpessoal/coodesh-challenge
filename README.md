@@ -24,6 +24,7 @@ This project aims to automate the registration and facilitate the sum of transac
 - Finally, run the command: "yarn dev" to start your web.
 
 
-
+## Project Presentation
+ - https://www.loom.com/embed/99f31f4e017e453aa454fa24a0709498
 
 This is a challenge by Coodesh

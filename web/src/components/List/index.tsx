@@ -5,13 +5,15 @@ import {
   Tr,
   Th,
   Td,
-  TableContainer,
   ChakraProvider,
+  TableContainer,
 } from "@chakra-ui/react";
 import chakraTheme from "../../theme/chakraTheme";
 import moment from "moment";
+import { PaginateButton, Pagination } from "./styles";
+import { ArrowLeftIcon, ArrowRightIcon } from "@chakra-ui/icons";
 
-export function List({ transactions }: any) {
+export function List({ transactions, metaData, setCurrentPage }: any) {
   const types = [
     "Venda Produtor",
     "Venda Afiliado",
@@ -26,6 +28,14 @@ export function List({ transactions }: any) {
     }).format(value / 100);
   };
 
+  const leftClick = async (page: number) => {
+    setCurrentPage(page - 1);
+  };
+
+  const rightClick = async (page: number) => {
+    setCurrentPage(page + 1);
+  };
+
   return (
     <div>
       <ChakraProvider theme={chakraTheme}>
@@ -37,7 +47,7 @@ export function List({ transactions }: any) {
                 <Th color={"#FBD38D"}>Data</Th>
                 <Th color={"#FBD38D"}>Produto</Th>
                 <Th color={"#FBD38D"}>Valor</Th>
-                <Th color={"#FBD38D"}>Vendendor</Th>
+                <Th color={"#FBD38D"}>Vendedor</Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -55,6 +65,26 @@ export function List({ transactions }: any) {
             </Tbody>
           </Table>
         </TableContainer>
+        <Pagination>
+          {metaData.current_page === 1 ? (
+            <PaginateButton disabled>
+              <ArrowLeftIcon />
+            </PaginateButton>
+          ) : (
+            <PaginateButton onClick={() => leftClick(metaData.current_page)}>
+              <ArrowLeftIcon />
+            </PaginateButton>
+          )}
+          {metaData.current_page === metaData.last_page ? (
+            <PaginateButton disabled>
+              <ArrowRightIcon />
+            </PaginateButton>
+          ) : (
+            <PaginateButton onClick={() => rightClick(metaData.current_page)}>
+              <ArrowRightIcon />
+            </PaginateButton>
+          )}
+        </Pagination>
       </ChakraProvider>
     </div>
   );

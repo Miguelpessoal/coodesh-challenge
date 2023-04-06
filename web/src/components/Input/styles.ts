@@ -12,12 +12,12 @@ export const Label = styled.h5`
   font-size: 15px;
 
   margin-bottom: -1.5px;
-  margin-left: 0.7rem;
+  margin-left: 0.8rem;
 
   padding: 0rem 0.4rem;
 
   background: ${(props) => props.theme.colors.darkBlue[100]};
-  height: 0.5rem;
+  height: 0.6rem;
   width: 3rem;
 
   z-index: 1;

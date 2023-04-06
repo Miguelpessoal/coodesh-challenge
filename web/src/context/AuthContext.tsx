@@ -1,7 +1,7 @@
 import { AxiosResponse } from "axios";
 import { useEffect, useState } from "react";
 import { createContext } from "react";
-import { parseCookies, setCookie } from "nookies";
+import { destroyCookie, parseCookies, setCookie } from "nookies";
 import { api } from "../utils/Api";
 import { useNavigate } from "react-router";
 import { useToast } from "@chakra-ui/react";
@@ -21,6 +21,7 @@ type AuthContextType = {
   setRef: Function;
   user: UserType | null;
   signIn: (data: SignInType) => Promise<void>;
+  singOut: Function;
 };
 
 export const AuthContext = createContext({} as AuthContextType);
@@ -73,9 +74,16 @@ export function AuthProvider({ children }: any) {
       });
   };
 
+  const singOut = async () => {
+    api.post("logout").then(() => {
+      destroyCookie(undefined, "token");
+      navigate("/login");
+    });
+  };
+
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, user, signIn, ref, setRef }}
+      value={{ isAuthenticated, user, signIn, singOut, ref, setRef }}
     >
       {children}
     </AuthContext.Provider>

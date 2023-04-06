@@ -13,6 +13,8 @@ export default class TransactionsController {
 
     const transactions = await Transaction.query().paginate(page, limit)
 
+    transactions.baseUrl('/transactions')
+
     return transactions
   }
 

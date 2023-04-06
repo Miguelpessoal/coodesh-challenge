@@ -14,5 +14,6 @@ export const defaultTheme = {
       300: "#F2760B",
     },
     brown: "#3E3D3C",
+    red: "#DA0000",
   },
 };

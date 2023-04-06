@@ -78,3 +78,18 @@ export const FileInputLabel = styled.label`
 export const FileInput = styled.input`
   display: none;
 `;
+
+export const LogOutButton = styled(Button)`
+  color: ${(props) => props.theme.colors.red};
+
+  margin-bottom: 1rem;
+
+  border: 2px solid ${(props) => props.theme.colors.red};
+
+  :hover {
+    background-color: ${(props) => props.theme.colors.red};
+    color: ${(props) => props.theme.colors.white[100]};
+
+    transition: 0.6s;
+  }
+`;
